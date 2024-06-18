@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="premios.css">
+    <link rel="stylesheet" href="botaoback.css">
+    <link rel="stylesheet" href="newonde.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WD BLACK ROLETA</title>
+    <style>
+.premios {
+    width: 100%;
+    padding-top: 50px;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    position: fixed;
+    margin-top: -100px;
+    bottom: 50px;
+}
+        @keyframes shadowLoop {
+
+            0%,
+            100% {
+                box-shadow: 0px 0px 100px #00e1ff;
+                /* Definindo a sombra inicial */
+            }
+
+            50% {
+                box-shadow: 0px 0px 100px #ff008b;
+                /* Definindo a sombra final */
+            }
+        }
+
+        .back_wdblack {
+   
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+        .ggdigital {
+            justify-content: center;
+            display: grid;
+        }
+
+        .ggdigital img {
+            width: 100px;
+        }
+
+        .textgg {
+            display: flex;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .containerpremios {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .containerpremios .boxpremios {
+    width: 300px;
+    margin: 15px;
+    height: 100px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+        .mainalign {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .imglogo {
+            /* margin-left: 100px; */
+            margin-bottom: -220px;
+            margin-top: 200px;
+            display: flex;
+            margin-left: 100px;
+            margin-right: 100px;
+            position: relative;
+            justify-content: space-between;
+        }
+
+        .imglogo img {
+            height: 250px;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
+
+        body {
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: #1A1A1A;
+            background-size: cover;
+            font-family: monospace;
+
+        }
+
+        .mainbox {
+            
+            background: url(assets/back.png);
+            position: relative;
+            width: 500px;
+            margin-bottom: 80px;
+            height: 500px;
+        }
+
+        .mainbox::after {
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 100%;
+    background: url(assets/marker.png) no-repeat;
+    background-size: 100px;
+    right: 145px;
+    top: -15%;
+    transform: translate(-50%);
+}
+
+
+        .box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+           
+            border: 10px solid #24242b;
+            overflow: hidden;
+            transition: all ease 5s;
+        }
+
+        span {
+            width: 50%;
+            height: 50%;
+            display: inline-block;
+            position: absolute;
+        }
+
+        .span1 {
+            clip-path: polygon(0 92%, 100% 50%, 0 8%);
+            background-color: coral;
+            top: 120px;
+            left: 0;
+        }
+
+        .span2 {
+            clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+            background-color: rgb(255, 223, 80);
+            top: 120px;
+            right: 0;
+        }
+
+        .span3 {
+            clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+            background-color: rgb(0, 161, 100);
+            bottom: 0;
+            left: 120px;
+        }
+
+        .span4 {
+            clip-path: polygon(50% 100%, 92% 0, 8% 0);
+            background-color: rgb(255, 80, 246);
+            left: 120px;
+            top: 0;
+        }
+
+        .box2 {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-135deg);
+        }
+
+        span b {
+            width: 65px;
+            height: 65px;
+            line-height: 65px;
+            border-radius: 50%;
+            font-size: 26px;
+            text-align: center;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: inset 0 3px 3px 0px #717171;
+        }
+.ggtop{
+    height: 520px;
+}
+        .spin {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            background-color: #1e1e28;
+            color: #fff;
+            box-shadow: 0px 5px 50px #ffffff;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+
+
+        }
+
+        .spin:active {
+            width: 90px;
+            height: 90px;
+            font-size: 19px;
+            transition: 0.2s;
+        }
+        #backcooler {
+    position: absolute;
+    top: -50px;
+    /* left: 0; */
+    height: 1990px;
+    z-index: -1;
+}
+.aligncooler {
+    justify-content: center;
+    display: flex;
+    margin-top: 150px;
+}
+.newrow .button {
+    position: relative;
+    left: 25%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 120px;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 60px;  
+    line-height: 110px;
+    border-radius: 20px;
+    border: 7px solid #fff;
+    transition: 0.2s;
+    cursor: pointer;
+    box-shadow: 10px 10px 60px #000;
+    animation: colorChange 3s infinite alternate; /* Adiciona animação de mudança de cor ao fundo */
+}
+
+
+
+.newrow .button:hover {
+    width: 430px;
+    transition: 0.2s;
+    left: 26%;
+    font-size: 60px;
+    height: 125px;
+ 
+}
+
+
+
+
+.btn {
+    padding: 50px;
+    font-size: 60px;
+    border-radius: 50%;
+    width: 350px;
+    height: 350PX;
+    border: none;
+    background: #ff7012;
+    color: white;
+    cursor: pointer;
+    left: 26%;
+    top: -110%;
+    position: relative;
+    z-index: 1;
+    transition: 0.2s;
+}
+.btn:hover{
+    background: #000;
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+.btn img {
+    width: 204px; /* ajuste o tamanho da imagem conforme necessário */
+    height: 204px; /* ajuste o tamanho da imagem conforme necessário */
+  margin-left: 25%;
+}
+
+
+.classe{
+    width: 90px;
+}
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="back_wdblack">
+          <img src="assets/back_wdblack.jpg" id="background-video"alt="">
+    </div> <div class="resultado" id="resultado"></div>
+
+
+    <div class="imglogo">
+        <div><img src="assets/logo-wdblack.png" alt=""></div>
+        <div><img src="assets/logo-sandisk.png" alt=""></div>
+          </div>
+  
+    <div class="newrow">
+    <div id="app">
+        <img class="marker" src="marker.png" />
+        <div class="aligncooler">
+      </div>
+        <img class="wheel" src="páscooler.png" />
+        <button class="btn" onclick="startButton.click()">
+            <img src="play.png" alt="Play">
+        </button>
+        <div class="display">
+            <div class="imgdisplay">
+                <img src="assets/logo.png" alt="">
+            </div>
+            <button>Meu Botão</button>
+        </div>
+        <div class="mask"></div>
+
+      </div>
+    </div>
+    <script>
+        (function() {
+            const wheel = document.querySelector('.wheel');
+            const startButton = document.querySelector('.btn');
+            const display = document.querySelector('.display');
+            const marker = document.querySelector('.marker'); // Referência ao marcador
+    
+            let deg = 0;
+            let zoneSize = 45; // Cada segmento da roda (8 segmentos, então 360/8)
+            let clicks = 0;
+            let cartaomemoriaReleasedCount = 0; // Contador de liberação do cartao de memoria
+            let garrafaReleasedCount = 0; // Contador de liberação da garrafa
+            let brindeReleasedCount = 0; // Contador de liberação do brinde
+            let squezzeReleasedCount = 0; // Contador de liberação do Squezze
+            let bagsandiskReleasedCount = 0; // Contador de liberação do Bag SanDisk
+            let bagwdblackReleasedCount = 0; // Contador de liberação da Bag WD Black
+            let camisetaReleasedCount = 0; // Contador de liberação da camiseta
+    
+            // Counter clockwise
+            const symbolSegments = {
+                1: "#6\nParabéns! Você ganhou uma Bag San Disk Exclusiva",
+                2: "#7\nParabéns! Você ganhou um Brinde da Cooler Master",
+                3: "#4\nParabéns! Você ganhou uma Camiseta Exclusiva WD_ Black",
+                4: "#1\nParabéns! Você ganhou um Squezze WD_ Black",
+                5: "#0\nPoxa! Não foi dessa vez!",
+                6: "#2\nParabéns! Você ganhou uma Garrafa San Disk",
+                7: "#3\nParabéns! Você ganhou um Cartão de Memória San Disk",
+                8: "#5\nParabéns! Você ganhou uma Bag WD_ Black Exclusiva",
+            };
+    
+            const segmentCounts = {
+                "#6\nParabéns! Você ganhou uma Bag San Disk Exclusiva": () => bagsandiskReleasedCount++,
+                "#7\nParabéns! Você ganhou um Brinde da Cooler Master": () => brindeReleasedCount++,
+                "#4\nParabéns! Você ganhou uma Camiseta Exclusiva WD_ Black": () => camisetaReleasedCount++,
+                "#1\nParabéns! Você ganhou um Squezze WD_ Black": () => squezzeReleasedCount++,
+                "#0\nPoxa! Não foi dessa vez!": () => {},
+                "#2\nParabéns! Você ganhou uma Garrafa San Disk": () => garrafaReleasedCount++,
+                "#3\nParabéns! Você ganhou um Cartão de Memória San Disk": () => cartaomemoriaReleasedCount++,
+                "#5\nParabéns! Você ganhou uma Bag WD_ Black Exclusiva": () => bagwdblackReleasedCount++
+            };
+    
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * max);
+            }
+    
+            function shouldReleasePrize(probability) {
+                return getRandomInt(100) < probability; // Retorna verdadeiro baseado na probabilidade passada
+            }
+    
+            startButton.addEventListener('click', () => {
+                // Disable button during spin
+                startButton.style.pointerEvents = 'none';
+    
+                // Calculate a new rotation angle based on the number of clicks
+                const markerAngle = -Math.atan2(marker.offsetTop, marker.offsetLeft) * (180 / Math.PI);
+                let snailAngle;
+    
+                console.log("Clicks:", clicks);
+                console.log("Marker Angle:", markerAngle); // Adicionado para depuração
+    
+                switch (clicks) {
+                    default:
+                        if (clicks <= 1000) {
+                            if (squezzeReleasedCount < 100 && shouldReleasePrize(2)) { // 2% chance para liberar "squezze"
+                                snailAngle = 150 + markerAngle; // squezze
+                            } else if (camisetaReleasedCount < 200 && shouldReleasePrize(2)) { // 2% chance para liberar "Camiseta"
+                                snailAngle = 100 + markerAngle; // Camiseta
+                            } else if (garrafaReleasedCount < 10 && shouldReleasePrize(5)) { // 5% chance para liberar "garrafa"
+                                snailAngle = 250 + markerAngle; // garrafa
+                            } else if (bagsandiskReleasedCount < 1 && shouldReleasePrize(10)) { // 10% chance para liberar "bagsandisk"
+                                snailAngle = 410 + markerAngle; // bagsandisk
+                            } else if (bagwdblackReleasedCount < 1 && shouldReleasePrize(0.05)) { // 0.05% chance para liberar "bagwdblack"
+                                snailAngle = 350 + markerAngle; // bagwdblack
+                            } else if (brindeReleasedCount < 1 && shouldReleasePrize(0.05)) { // 0,05% chance para liberar "brinde"
+                                snailAngle = 420 + markerAngle; // brinde 
+                            } else if (cartaomemoriaReleasedCount < 1 && shouldReleasePrize(0.05)) { // 0,05% chance para liberar "cartaomemoria"
+                                snailAngle = 300 + markerAngle; // cartaomemoria 
+                            } else {
+                                snailAngle = 220 + markerAngle; // Nothing
+                            }
+                        }
+                        break;
+                }
+    
+                console.log("Snail Angle:", snailAngle); // Adicionado para depuração
+                console.log("Cartão da Memória Count:", cartaomemoriaReleasedCount); // Adicionado para depuração
+                console.log("Garrafa Released Count:", garrafaReleasedCount); // Adicionado para depuração
+                console.log("brinde Released Count:", brindeReleasedCount); // Adicionado para depuração
+                console.log("squezze Released Count:", squezzeReleasedCount); // Adicionado para depuração
+                console.log("bagsandisk Released Count:", bagsandiskReleasedCount); // Adicionado para depuração
+                console.log("bagwdblack Released Count:", bagwdblackReleasedCount); // Adicionado para depuração
+                console.log("camiseta Released Count:", camisetaReleasedCount); // Adicionado para depuração
+    
+                const snailSegment = Math.floor(snailAngle / zoneSize) + 1;
+                deg = 360 * 10 + (snailSegment - 1) * zoneSize + Math.random() * zoneSize;
+    
+                // Set the transition on the wheel
+                wheel.style.transition = 'transform 5s ease-in-out'; // Instant transition
+                // Rotate the wheel
+                wheel.style.transform = `rotate(${deg}deg)`;
+                // Apply the blur
+                wheel.classList.add('blur');
+    
+                // Increment click counter
+                clicks++;
+            });
+    
+            wheel.addEventListener('transitionend', () => {
+                wheel.classList.remove('blur');
+                startButton.style.pointerEvents = 'auto';
+                const actualDeg = deg % 360;
+                wheel.style.transition = 'none';
+                wheel.style.transform = `rotate(${actualDeg}deg)`;
+                const result = symbolSegments[Math.ceil(actualDeg / zoneSize)];
+    
+                // Atualizar contador correspondente
+                if (segmentCounts[result]) {
+                    segmentCounts[result]();
+                }
+    
+                // Adicionar o botão e a imagem à div "display"
+                const button = document.createElement('button');
+                button.innerHTML = '<i class="bi bi-caret-right-fill"></i>';
+    
+                const img = document.createElement('img');
+                img.src = 'image_logo1.png';
+                img.alt = '';
+    
+                const resultDiv = document.createElement('div');
+                resultDiv.textContent = result;
+    
+                const images = {
+                    "#0\nPoxa! Não foi dessa vez!": 'assets/sad.png',
+                    "#2\nParabéns! Você ganhou uma Garrafa San Disk": 'assets/garrafa.png',
+                    "#3\nParabéns! Você ganhou um Cartão de Memória San Disk": 'assets/cartao_memoria.png',
+                    "#4\nParabéns! Você ganhou uma Camiseta Exclusiva WD_ Black": 'assets/camiseta.png',
+                    "#1\nParabéns! Você ganhou um Squezze WD_ Black": 'assets/squezze.png',
+                    "#5\nParabéns! Você ganhou uma Bag WD_ Black Exclusiva": 'assets/bag_wd.png',
+                    "#6\nParabéns! Você ganhou uma Bag San Disk Exclusiva": 'assets/bag_sandisk.png',
+                    "#7\nParabéns! Você ganhou um Brinde da Cooler Master": 'assets/brinde.png'
+                };
+    
+                if (images[result]) {
+                    const prizeImg = document.createElement('img');
+                    prizeImg.src = images[result];
+                    resultDiv.appendChild(prizeImg); // Adiciona a imagem à div
+                }
+    
+                // Limpar conteúdo anterior da div ".display"
+                display.innerHTML = '';
+    
+                // Adicionar elementos à div ".display"
+                display.appendChild(img); // Coloque a imagem primeiro
+                display.appendChild(resultDiv);
+                display.appendChild(button);
+    
+                // Exibir a div "display" adicionando a classe "show"
+                display.classList.add('show');
+                // Mostrar a máscara
+                document.querySelector('.mask').style.display = 'block';
+    
+                // Ocultar a div ".display" quando o botão for clicado
+                button.addEventListener('click', () => {
+                    display.classList.remove('show');
+                    document.querySelector('.mask').style.display = 'none';
+                });
+            });
+        })();
+    </script>
+    
+        
+
+    
+    <div class="premios">
+
+      
+        <div class="containerpremios">
+            <div class="boxpremios">
+
+                <div class="card">
+                    <p class="title2">Garrafa Exclusiva SanDisk</p>
+                    <img src="assets/garrafa.png" alt="">
+                    <defs>
+                        <linearGradient id="paint0_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                    </defs>
+                    </svg>
+                </div>
+            </div>
+            <div class="boxpremios">
+
+                <div class="card">
+                    <p class="title2">Brinde Cooler Master</p>
+                    <img src="assets/brinde.png" alt="">
+                    <defs>
+                        <linearGradient id="paint0_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                    </defs>
+                    </svg>
+                </div>
+            </div>
+            <div class="boxpremios">
+                <div class="card">
+                    <p class="title2">Squezze Exclusivo WD_ Black</p>
+                    <img src="assets/squezze.png" alt="">
+                    <defs>
+                        <linearGradient id="paint0_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                    </defs>
+                    </svg>
+                </div>
+
+            </div>
+            <div class="boxpremios">
+                <div class="card">
+                     <p class="title2">Bag Exclusiva San Disk</p>
+                    <img src="assets/bag_sandisk.png" alt="">
+                    <defs>
+                        <linearGradient id="paint0_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                    </defs>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="containerpremios">
+            <div class="boxpremios">
+                <div class="card">
+                 
+                    <p class="title2">Bag Exclusiva WD_ Black</p>
+                    <img src="assets/bag_wd.png" alt="">
+                    <defs>
+                        <linearGradient id="paint0_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                    </defs>
+                    </svg>
+                </div>
+
+
+            </div>
+            <div class="boxpremios">
+
+                <div class="card">
+                     <p class="title2">Camiseta Exclusiva WD_ Black</p>
+                    <img src="assets/camiseta.png" alt="">
+                    <defs>
+                        <linearGradient id="paint0_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                    </defs>
+                    </svg>
+                </div>
+            </div>
+            <div class="boxpremios">
+
+                <div class="card">
+                    <p class="title2">Cartão da Memória San Disk</p>
+                    <img src="assets/cartao_memoria.png" alt="">
+                    <defs>
+                        <linearGradient id="paint0_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_501_142" x1="0" y1="0" x2="96.1684" y2="87.6201"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF66FF"></stop>
+                            <stop offset="0.510417" stop-color="#6248FF"></stop>
+                            <stop offset="1" stop-color="#00DDEB"></stop>
+                        </linearGradient>
+                    </defs>
+                    </svg>
+                </div>
+            </div>
+            
+        </div>
+
+
+<div class="ggdigital"><img src="assets/ggdigitaltop.png" alt="" id="ggtop" style="height: 250px; width: 400px;">
+</div>
+    </div>
+    <div class="cursor"></div>
+
+    
+    <script src="js/cursor.js"></script>
+       
+</body>
+
+</html>
