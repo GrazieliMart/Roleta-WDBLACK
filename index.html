@@ -415,26 +415,27 @@
     
                 switch (clicks) {
                     default:
-                        if (clicks <= 1000) {
-                            if (squezzeReleasedCount < 100 && shouldReleasePrize(2)) { // 2% chance para liberar "squezze"
-                                snailAngle = 150 + markerAngle; // squezze
-                            } else if (camisetaReleasedCount < 200 && shouldReleasePrize(2)) { // 2% chance para liberar "Camiseta"
-                                snailAngle = 100 + markerAngle; // Camiseta
-                            } else if (garrafaReleasedCount < 10 && shouldReleasePrize(5)) { // 5% chance para liberar "garrafa"
-                                snailAngle = 250 + markerAngle; // garrafa
-                            } else if (bagsandiskReleasedCount < 1 && shouldReleasePrize(10)) { // 10% chance para liberar "bagsandisk"
-                                snailAngle = 410 + markerAngle; // bagsandisk
-                            } else if (bagwdblackReleasedCount < 1 && shouldReleasePrize(0.05)) { // 0.05% chance para liberar "bagwdblack"
-                                snailAngle = 350 + markerAngle; // bagwdblack
-                            } else if (brindeReleasedCount < 1 && shouldReleasePrize(0.05)) { // 0,05% chance para liberar "brinde"
-                                snailAngle = 420 + markerAngle; // brinde 
-                            } else if (cartaomemoriaReleasedCount < 1 && shouldReleasePrize(0.05)) { // 0,05% chance para liberar "cartaomemoria"
-                                snailAngle = 300 + markerAngle; // cartaomemoria 
-                            } else {
-                                snailAngle = 220 + markerAngle; // Nothing
-                            }
-                        }
-                        break;
+    if (clicks <= 1000) {
+        if (squezzeReleasedCount < 25 && shouldReleasePrize(2)) { // 2% chance para liberar "squezze"
+            snailAngle = 150 + markerAngle; // squezze
+        } else if (camisetaReleasedCount < 50 && shouldReleasePrize(2)) { // 2% chance para liberar "Camiseta"
+            snailAngle = 100 + markerAngle; // Camiseta
+        } else if (garrafaReleasedCount < 20 && shouldReleasePrize(5)) { // 5% chance para liberar "garrafa"
+            snailAngle = 250 + markerAngle; // garrafa
+        } else if (bagsandiskReleasedCount < 50 && shouldReleasePrize(10)) { // 10% chance para liberar "bagsandisk"
+            snailAngle = 410 + markerAngle; // bagsandisk
+        } else if (bagwdblackReleasedCount < 50 && shouldReleasePrize(0.05)) { // 0.05% chance para liberar "bagwdblack"
+            snailAngle = 350 + markerAngle; // bagwdblack
+        } else if (brindeReleasedCount < 10 && shouldReleasePrize(0.05)) { // 0.05% chance para liberar "brinde"
+            snailAngle = 420 + markerAngle; // brinde 
+        } else if (cartaomemoriaReleasedCount < 2 && shouldReleasePrize(0.05)) { // 0.05% chance para liberar "cartaomemoria"
+            snailAngle = 300 + markerAngle; // cartaomemoria 
+        } else {
+            snailAngle = 220 + markerAngle; // Nothing
+        }
+    }
+    break;
+
                 }
     
                 console.log("Snail Angle:", snailAngle); // Adicionado para depuração
