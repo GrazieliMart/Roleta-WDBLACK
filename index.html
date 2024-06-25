@@ -403,64 +403,63 @@
             }
     
             startButton.addEventListener('click', () => {
-                // Disable button during spin
-                startButton.style.pointerEvents = 'none';
-    
-                // Calculate a new rotation angle based on the number of clicks
-                const markerAngle = -Math.atan2(marker.offsetTop, marker.offsetLeft) * (180 / Math.PI);
-                let snailAngle;
-    
-                console.log("Clicks:", clicks);
-                console.log("Marker Angle:", markerAngle); // Adicionado para depuração
-    
-                switch (clicks) {
-                    default:
-    if (clicks <= 1000) {
-        if (squezzeReleasedCount < 25 && shouldReleasePrize(2)) { // 2% chance para liberar "squezze"
-            snailAngle = 150 + markerAngle; // squezze
-        } else if (camisetaReleasedCount < 50 && shouldReleasePrize(2)) { // 2% chance para liberar "Camiseta"
-            snailAngle = 100 + markerAngle; // Camiseta
-        } else if (garrafaReleasedCount < 20 && shouldReleasePrize(5)) { // 5% chance para liberar "garrafa"
-            snailAngle = 250 + markerAngle; // garrafa
-        } else if (bagsandiskReleasedCount < 50 && shouldReleasePrize(10)) { // 10% chance para liberar "bagsandisk"
-            snailAngle = 410 + markerAngle; // bagsandisk
-        } else if (bagwdblackReleasedCount < 50 && shouldReleasePrize(0.05)) { // 0.05% chance para liberar "bagwdblack"
-            snailAngle = 350 + markerAngle; // bagwdblack
-        } else if (brindeReleasedCount < 10 && shouldReleasePrize(0.05)) { // 0.05% chance para liberar "brinde"
-            snailAngle = 420 + markerAngle; // brinde 
-        } else if (cartaomemoriaReleasedCount < 2 && shouldReleasePrize(0.05)) { // 0.05% chance para liberar "cartaomemoria"
-            snailAngle = 300 + markerAngle; // cartaomemoria 
-        } else {
-            snailAngle = 220 + markerAngle; // Nothing
-        }
-    }
-    break;
+    // Disable button during spin
+    startButton.style.pointerEvents = 'none';
 
+    // Calculate a new rotation angle based on the number of clicks
+    const markerAngle = -Math.atan2(marker.offsetTop, marker.offsetLeft) * (180 / Math.PI);
+    let snailAngle;
+
+    console.log("Clicks:", clicks);
+    console.log("Marker Angle:", markerAngle); // Adicionado para depuração
+
+    switch (clicks) {
+        default:
+            if (clicks <= 1000) {
+                if (squezzeReleasedCount < 25 && shouldReleasePrize(10)) { // 10% chance para liberar "squezze"
+                    snailAngle = 150 + markerAngle; // squezze
+                } else if (camisetaReleasedCount < 50 && shouldReleasePrize(10)) { // 10% chance para liberar "Camiseta"
+                    snailAngle = 100 + markerAngle; // Camiseta
+                } else if (garrafaReleasedCount < 20 && shouldReleasePrize(20)) { // 20% chance para liberar "garrafa"
+                    snailAngle = 250 + markerAngle; // garrafa
+                } else if (bagsandiskReleasedCount < 50 && shouldReleasePrize(30)) { // 30% chance para liberar "bagsandisk"
+                    snailAngle = 410 + markerAngle; // bagsandisk
+                } else if (bagwdblackReleasedCount < 50 && shouldReleasePrize(5)) { // 5% chance para liberar "bagwdblack"
+                    snailAngle = 350 + markerAngle; // bagwdblack
+                } else if (brindeReleasedCount < 10 && shouldReleasePrize(5)) { // 5% chance para liberar "brinde"
+                    snailAngle = 420 + markerAngle; // brinde 
+                } else if (cartaomemoriaReleasedCount < 2 && shouldReleasePrize(5)) { // 5% chance para liberar "cartaomemoria"
+                    snailAngle = 300 + markerAngle; // cartaomemoria 
+                } else {
+                    snailAngle = 220 + markerAngle; // Nothing
                 }
-    
-                console.log("Snail Angle:", snailAngle); // Adicionado para depuração
-                console.log("Cartão da Memória Count:", cartaomemoriaReleasedCount); // Adicionado para depuração
-                console.log("Garrafa Released Count:", garrafaReleasedCount); // Adicionado para depuração
-                console.log("brinde Released Count:", brindeReleasedCount); // Adicionado para depuração
-                console.log("squezze Released Count:", squezzeReleasedCount); // Adicionado para depuração
-                console.log("bagsandisk Released Count:", bagsandiskReleasedCount); // Adicionado para depuração
-                console.log("bagwdblack Released Count:", bagwdblackReleasedCount); // Adicionado para depuração
-                console.log("camiseta Released Count:", camisetaReleasedCount); // Adicionado para depuração
-    
-                const snailSegment = Math.floor(snailAngle / zoneSize) + 1;
-                deg = 360 * 10 + (snailSegment - 1) * zoneSize + Math.random() * zoneSize;
-    
-                // Set the transition on the wheel
-                wheel.style.transition = 'transform 5s ease-in-out'; // Instant transition
-                // Rotate the wheel
-                wheel.style.transform = `rotate(${deg}deg)`;
-                // Apply the blur
-                wheel.classList.add('blur');
-    
-                // Increment click counter
-                clicks++;
-            });
-    
+            }
+            break;
+    }
+
+    console.log("Snail Angle:", snailAngle); // Adicionado para depuração
+    console.log("Cartão da Memória Count:", cartaomemoriaReleasedCount); // Adicionado para depuração
+    console.log("Garrafa Released Count:", garrafaReleasedCount); // Adicionado para depuração
+    console.log("brinde Released Count:", brindeReleasedCount); // Adicionado para depuração
+    console.log("squezze Released Count:", squezzeReleasedCount); // Adicionado para depuração
+    console.log("bagsandisk Released Count:", bagsandiskReleasedCount); // Adicionado para depuração
+    console.log("bagwdblack Released Count:", bagwdblackReleasedCount); // Adicionado para depuração
+    console.log("camiseta Released Count:", camisetaReleasedCount); // Adicionado para depuração
+
+    const snailSegment = Math.floor(snailAngle / zoneSize) + 1;
+    deg = 360 * 10 + (snailSegment - 1) * zoneSize + Math.random() * zoneSize;
+
+    // Set the transition on the wheel
+    wheel.style.transition = 'transform 5s ease-in-out'; // Instant transition
+    // Rotate the wheel
+    wheel.style.transform = `rotate(${deg}deg)`;
+    // Apply the blur
+    wheel.classList.add('blur');
+
+    // Increment click counter
+    clicks++;
+});
+
             wheel.addEventListener('transitionend', () => {
                 wheel.classList.remove('blur');
                 startButton.style.pointerEvents = 'auto';
