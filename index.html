@@ -416,7 +416,7 @@
     switch (clicks) {
         default:
             if (clicks <= 1000) {
-                if (squezzeReleasedCount < 25 && shouldReleasePrize(10)) { // 10% chance para liberar "squezze"
+                if (squezzeReleasedCount < 20 && shouldReleasePrize(10)) { // 10% chance para liberar "squezze"
                     snailAngle = 150 + markerAngle; // squezze
                 } else if (camisetaReleasedCount < 50 && shouldReleasePrize(10)) { // 10% chance para liberar "Camiseta"
                     snailAngle = 100 + markerAngle; // Camiseta
@@ -424,11 +424,11 @@
                     snailAngle = 250 + markerAngle; // garrafa
                 } else if (bagsandiskReleasedCount < 50 && shouldReleasePrize(30)) { // 30% chance para liberar "bagsandisk"
                     snailAngle = 410 + markerAngle; // bagsandisk
-                } else if (bagwdblackReleasedCount < 50 && shouldReleasePrize(5)) { // 5% chance para liberar "bagwdblack"
+                } else if (bagwdblackReleasedCount < 50 && shouldReleasePrize(10)) { // 5% chance para liberar "bagwdblack"
                     snailAngle = 350 + markerAngle; // bagwdblack
-                } else if (brindeReleasedCount < 10 && shouldReleasePrize(5)) { // 5% chance para liberar "brinde"
+                } else if (brindeReleasedCount < 10 && shouldReleasePrize(10)) { // 5% chance para liberar "brinde"
                     snailAngle = 420 + markerAngle; // brinde 
-                } else if (cartaomemoriaReleasedCount < 2 && shouldReleasePrize(5)) { // 5% chance para liberar "cartaomemoria"
+                } else if (cartaomemoriaReleasedCount < 20 && shouldReleasePrize(10)) { // 5% chance para liberar "cartaomemoria"
                     snailAngle = 300 + markerAngle; // cartaomemoria 
                 } else {
                     snailAngle = 220 + markerAngle; // Nothing
