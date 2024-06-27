@@ -359,7 +359,7 @@
             const startButton = document.querySelector('.btn');
             const display = document.querySelector('.display');
             const marker = document.querySelector('.marker'); // Referência ao marcador
-    
+        
             let deg = 0;
             let zoneSize = 45; // Cada segmento da roda (8 segmentos, então 360/8)
             let clicks = 0;
@@ -370,7 +370,7 @@
             let bagsandiskReleasedCount = 0; // Contador de liberação do Bag SanDisk
             let bagwdblackReleasedCount = 0; // Contador de liberação da Bag WD Black
             let camisetaReleasedCount = 0; // Contador de liberação da camiseta
-    
+        
             // Counter clockwise
             const symbolSegments = {
                 1: "#6\nParabéns! Você ganhou uma Bag San Disk Exclusiva",
@@ -382,7 +382,7 @@
                 7: "#3\nParabéns! Você ganhou uma Case de Cartão de Memória SanDisk",
                 8: "#5\nParabéns! Você ganhou uma Bag WD_ Black Exclusiva",
             };
-    
+        
             const segmentCounts = {
                 "#6\nParabéns! Você ganhou uma Bag San Disk Exclusiva": () => bagsandiskReleasedCount++,
                 "#7\nParabéns! Você ganhou um Brinde da Cooler Master": () => brindeReleasedCount++,
@@ -393,73 +393,66 @@
                 "#3\nParabéns! Você ganhou uma Case de Cartão de Memória SanDisk": () => cartaomemoriaReleasedCount++,
                 "#5\nParabéns! Você ganhou uma Bag WD_ Black Exclusiva": () => bagwdblackReleasedCount++
             };
-    
+        
             function getRandomInt(max) {
                 return Math.floor(Math.random() * max);
             }
-    
+        
             function shouldReleasePrize(probability) {
                 return getRandomInt(100) < probability; // Retorna verdadeiro baseado na probabilidade passada
             }
-    
+        
             startButton.addEventListener('click', () => {
-    // Disable button during spin
-    startButton.style.pointerEvents = 'none';
-
-    // Calculate a new rotation angle based on the number of clicks
-    const markerAngle = -Math.atan2(marker.offsetTop, marker.offsetLeft) * (180 / Math.PI);
-    let snailAngle;
-
-    console.log("Clicks:", clicks);
-    console.log("Marker Angle:", markerAngle); // Adicionado para depuração
-
-    switch (clicks) {
-        default:
-            if (clicks <= 1000) {
-                if (squezzeReleasedCount < 20 && shouldReleasePrize(10)) { // 10% chance para liberar "squezze"
-                    snailAngle = 150 + markerAngle; // squezze
-                } else if (camisetaReleasedCount < 50 && shouldReleasePrize(10)) { // 10% chance para liberar "Camiseta"
-                    snailAngle = 100 + markerAngle; // Camiseta
-                } else if (garrafaReleasedCount < 20 && shouldReleasePrize(20)) { // 20% chance para liberar "garrafa"
-                    snailAngle = 250 + markerAngle; // garrafa
-                } else if (bagsandiskReleasedCount < 50 && shouldReleasePrize(30)) { // 30% chance para liberar "bagsandisk"
-                    snailAngle = 410 + markerAngle; // bagsandisk
-                } else if (bagwdblackReleasedCount < 50 && shouldReleasePrize(10)) { // 5% chance para liberar "bagwdblack"
-                    snailAngle = 350 + markerAngle; // bagwdblack
-                } else if (brindeReleasedCount < 10 && shouldReleasePrize(10)) { // 5% chance para liberar "brinde"
-                    snailAngle = 420 + markerAngle; // brinde 
-                } else if (cartaomemoriaReleasedCount < 20 && shouldReleasePrize(10)) { // 5% chance para liberar "cartaomemoria"
-                    snailAngle = 300 + markerAngle; // cartaomemoria 
-                } else {
-                    snailAngle = 220 + markerAngle; // Nothing
+                // Disable button during spin
+                startButton.style.pointerEvents = 'none';
+        
+                // Calculate a new rotation angle based on the number of clicks
+                const markerAngle = -Math.atan2(marker.offsetTop, marker.offsetLeft) * (180 / Math.PI);
+                let snailAngle;
+        
+                console.log("Clicks:", clicks);
+                console.log("Marker Angle:", markerAngle); // Adicionado para depuração
+        
+                switch (clicks) {
+                    default:
+                        if (clicks <= 1000) {
+                            if (garrafaReleasedCount < 20 && shouldReleasePrize(30)) {
+                                snailAngle = 250 + markerAngle; // garrafa
+                            } else if (squezzeReleasedCount < 20 && shouldReleasePrize(30)) {
+                                snailAngle = 150 + markerAngle; // squezze
+                            } else if (camisetaReleasedCount < 50 && shouldReleasePrize(10)) {
+                                snailAngle = 100 + markerAngle; // Camiseta
+                            } else if (bagsandiskReleasedCount < 50 && shouldReleasePrize(10)) {
+                                snailAngle = 410 + markerAngle; // bagsandisk
+                            } else if (bagwdblackReleasedCount < 50 && shouldReleasePrize(10)) {
+                                snailAngle = 350 + markerAngle; // bagwdblack
+                            } else if (brindeReleasedCount < 10 && shouldReleasePrize(10)) {
+                                snailAngle = 420 + markerAngle; // brinde 
+                            } else if (cartaomemoriaReleasedCount < 20 && shouldReleasePrize(10)) {
+                                snailAngle = 300 + markerAngle; // cartaomemoria 
+                            } else {
+                                snailAngle = 220 + markerAngle; // Nothing
+                            }
+                        }
+                        break;
                 }
-            }
-            break;
-    }
-
-    console.log("Snail Angle:", snailAngle); // Adicionado para depuração
-    console.log("Case Cartão da Memória Count:", cartaomemoriaReleasedCount); // Adicionado para depuração
-    console.log("Garrafa Released Count:", garrafaReleasedCount); // Adicionado para depuração
-    console.log("brinde Released Count:", brindeReleasedCount); // Adicionado para depuração
-    console.log("squezze Released Count:", squezzeReleasedCount); // Adicionado para depuração
-    console.log("bagsandisk Released Count:", bagsandiskReleasedCount); // Adicionado para depuração
-    console.log("bagwdblack Released Count:", bagwdblackReleasedCount); // Adicionado para depuração
-    console.log("camiseta Released Count:", camisetaReleasedCount); // Adicionado para depuração
-
-    const snailSegment = Math.floor(snailAngle / zoneSize) + 1;
-    deg = 360 * 10 + (snailSegment - 1) * zoneSize + Math.random() * zoneSize;
-
-    // Set the transition on the wheel
-    wheel.style.transition = 'transform 5s ease-in-out'; // Instant transition
-    // Rotate the wheel
-    wheel.style.transform = `rotate(${deg}deg)`;
-    // Apply the blur
-    wheel.classList.add('blur');
-
-    // Increment click counter
-    clicks++;
-});
-
+        
+                console.log("Snail Angle:", snailAngle); // Adicionado para depuração
+        
+                const snailSegment = Math.floor(snailAngle / zoneSize) + 1;
+                deg = 360 * 10 + (snailSegment - 1) * zoneSize + Math.random() * zoneSize;
+        
+                // Set the transition on the wheel
+                wheel.style.transition = 'transform 5s ease-in-out'; // Instant transition
+                // Rotate the wheel
+                wheel.style.transform = `rotate(${deg}deg)`;
+                // Apply the blur
+                wheel.classList.add('blur');
+        
+                // Increment click counter
+                clicks++;
+            });
+        
             wheel.addEventListener('transitionend', () => {
                 wheel.classList.remove('blur');
                 startButton.style.pointerEvents = 'auto';
@@ -467,23 +460,23 @@
                 wheel.style.transition = 'none';
                 wheel.style.transform = `rotate(${actualDeg}deg)`;
                 const result = symbolSegments[Math.ceil(actualDeg / zoneSize)];
-    
+        
                 // Atualizar contador correspondente
                 if (segmentCounts[result]) {
                     segmentCounts[result]();
                 }
-    
+        
                 // Adicionar o botão e a imagem à div "display"
                 const button = document.createElement('button');
                 button.innerHTML = '<i class="bi bi-caret-right-fill"></i>';
-    
+        
                 const img = document.createElement('img');
                 img.src = 'image_logo1.png';
                 img.alt = '';
-    
+        
                 const resultDiv = document.createElement('div');
                 resultDiv.textContent = result;
-    
+        
                 const images = {
                     "#0\nPoxa! Não foi dessa vez!": 'assets/sad.png',
                     "#2\nParabéns! Você ganhou uma Garrafa San Disk": 'assets/garrafa.png',
@@ -494,26 +487,26 @@
                     "#6\nParabéns! Você ganhou uma Bag San Disk Exclusiva": 'assets/bag_sandisk.png',
                     "#7\nParabéns! Você ganhou um Brinde da Cooler Master": 'assets/brinde.png'
                 };
-    
+        
                 if (images[result]) {
                     const prizeImg = document.createElement('img');
                     prizeImg.src = images[result];
                     resultDiv.appendChild(prizeImg); // Adiciona a imagem à div
                 }
-    
+        
                 // Limpar conteúdo anterior da div ".display"
                 display.innerHTML = '';
-    
+        
                 // Adicionar elementos à div ".display"
                 display.appendChild(img); // Coloque a imagem primeiro
                 display.appendChild(resultDiv);
                 display.appendChild(button);
-    
+        
                 // Exibir a div "display" adicionando a classe "show"
                 display.classList.add('show');
                 // Mostrar a máscara
                 document.querySelector('.mask').style.display = 'block';
-    
+        
                 // Ocultar a div ".display" quando o botão for clicado
                 button.addEventListener('click', () => {
                     display.classList.remove('show');
@@ -521,7 +514,7 @@
                 });
             });
         })();
-    </script>
+        </script>
     
         
 
